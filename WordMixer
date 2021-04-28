@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Program {
+	
+	//this is an exercise where one should exercise a class String and its most important methods.
+
+	public static void main(String[] args) {
+		
+		String newString;
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Please type a word");
+		newString = sc.next();
+		
+		System.out.println("The word after mixing: ");
+		System.out.println(mixAlternative3(newString));
+	}
+	
+	public static String mixAlternative1(String newString) {
+		int lastIndex = newString.length() -1;
+		char start = newString.charAt(0);
+		char end = newString.charAt(lastIndex);
+		String middle = newString.substring(1, lastIndex);
+		
+		return end + middle + start;
+		
+	}
+	
+	public static String mixAlternative2(String newString) {
+		int length = newString.length();
+		int middle = length / 2;
+		
+		String firstHalf = newString.substring(0, middle);
+		String secondHalf = newString.substring(middle, length);
+		
+		return secondHalf + firstHalf;
+	}
+	
+	public static String mixAlternative3(String newString) {
+		int lastIndex = newString.length() - 1;
+		
+		String temp1 = newString.substring(0, lastIndex -2);
+		String temp2 = newString.substring(lastIndex - 2, lastIndex + 1);
+		temp2 = temp2.toUpperCase();
+		return temp1 + temp2;
+	}
+
+}
